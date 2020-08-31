@@ -1,5 +1,7 @@
 package wordsfilter
 
+import "unicode"
+
 // dfa util
 type DFAUtil struct {
 	// The root node
@@ -9,6 +11,10 @@ type DFAUtil struct {
 func (dfa *DFAUtil) insertWord(word []rune) {
 	currNode := dfa.root
 	for _, c := range word {
+		if unicode.IsSpace(c) || unicode.IsPunct(c){
+			continue
+		}
+
 		if childNode, exist := currNode.children[c]; !exist {
 			childNode = newTrieNode()
 			currNode.children[c] = childNode
