@@ -101,7 +101,6 @@ func (dfa *DFAUtil) HandleWord(sentence string, repalceCh rune) string {
 		return sentence
 	}
 
-
 	sentenceList := []rune(sentence)
 	for _, matchIndexObj := range matchIndexList {
 		for index := matchIndexObj.start; index <= matchIndexObj.end; index++ {
