@@ -1,4 +1,4 @@
-module wordsfilter
+module github.com/Solamish/wordsFilter
 
 go 1.13
 
